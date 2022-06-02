@@ -1,7 +1,4 @@
-import json
-
 import requests
-from http import cookiejar
 from .constants import CONST_BASE_HEADERS, CONST_LOGIN_CREDENTIALS
 
 # Variables
@@ -27,17 +24,6 @@ login = session.post(url=login_url, headers=CONST_BASE_HEADERS, json=CONST_LOGIN
 login = login.json()
 cookies = session.cookies.get_dict()
 
-#print('Cookies:', cookies)
-
-# for key, value in cookies.items():
-#     if key == 'avs6_cookie':
-#         print(f'avs6_cookie: {value}')
-#     if key == 'sessionId':
-#         print(f'sessionId: {value}')
-#     if key == 'up':
-#         print(f'up: {value}')
-
-# print(response)
 
 # Get current live programs
 def get_live_channels():
@@ -52,6 +38,7 @@ def get_live_channels():
         # currentlyLive[item['channel'].get('channelId')]['title'] = item['metadata'].get('title')
 
     return epgLive
+
 
 def search_vod(action, url=vod_url ,channel=0, day=0, program=0):
     day = str(day)
@@ -106,7 +93,6 @@ def search_vod(action, url=vod_url ,channel=0, day=0, program=0):
             if assets.get('videoType') == 'SD_DASH_WV' and assets.get('programType') == 'CUTV' and assets.get('rights') == 'watch':
                 assetId = assets.get('assetId')
         #print(vidId, assetId)
-        # https://api.prd.tv.kpn.com/101/1.2.0/A/nld/pctv/kpn/CONTENT/VIDEOURL/PROGRAM/891345750/860562590?deviceId=c4db3b93a4c462db3e705dc1849f41060107a6a9ee1570caf630362f5d42560b&profile=G03
         vodProgramvideourl = f'{base_url}/CONTENT/VIDEOURL/PROGRAM/{vidId}/{assetId}?deviceId={deviceId}&profile=G03'
         #print(vodProgramvideourl)
         return vodProgramvideourl

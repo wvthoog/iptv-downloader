@@ -25,21 +25,14 @@ CONST_BASE_HEADERS = {
     'sec-ch-ua-platform': '"Linux"',
 }
 
-# Google Analytics Cookies _ga _gid _gat
-CONST_COOKIES = {
-    '_ga': 'GA1.2.973420811.1651405387',
-    '_gid': 'GA1.2.1274582633.1651405387',
-    '_gat': '1',
-    'sessionId': 'ed14b435-d794-cee2-1196-75f30af9107e',
-}
-
+# CHANGE THESE SETTINGS (username, password, deviceid)
 CONST_LOGIN_CREDENTIALS = {
     'credentialsStdAuth': {
-        'username': '20000003832416',
-        'password': '1149',
+        'username': '200000123456789',
+        'password': '1234',
         'remember': 'Y',
         'deviceRegistrationData': {
-            'deviceId': '014dc8ec5c997942bef19c0aec00fbba9ff1d7d29f12ee34ebed2ad2a918b2f2',
+            'deviceId': 'jkfsa82989asdf0asdf0asjko20380asd82931kadfhakshfkhds8',
             'accountDeviceIdType': 'DEVICEID',
             'deviceType': 'PCTV',
             'vendor': 'Chrome',
