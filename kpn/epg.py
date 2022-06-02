@@ -98,15 +98,11 @@ def search_vod(action, url=vod_url ,channel=0, day=0, program=0):
         return vodProgramvideourl
 
 
-def search_series():
-    print('bla')
-
-
 # # Get token
 def get_token():
     token_request = requests.get(url=token_url, headers=CONST_BASE_HEADERS, cookies=cookies)
     tokenValue = token_request.json()['resultObj']['token']
-    print(tokenValue)
+    #print(tokenValue)
 
 
 # Get mpd and drm url
@@ -114,7 +110,7 @@ def get_mpd_drm_url(url):
     # print(url)
     get_mpd = requests.get(url=url, headers=CONST_BASE_HEADERS, cookies=cookies)
     get_mpd = get_mpd.json()
-    print(get_mpd)
+    #print(get_mpd)
     try:
         mpd_src = get_mpd['resultObj']['src']['sources'].get('src')
         mpd_drm = get_mpd['resultObj']['src']['sources']['contentProtection']['widevine'].get('licenseAcquisitionURL')
