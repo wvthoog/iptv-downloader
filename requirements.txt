@@ -1,0 +1,11 @@
+xmltodict
+requests
+google
+google-api-python-client
+protobuf==3.16.0
+pycryptodome
+pycryptodomex
+aiohttp
+aiohttp_socks
+argparse
+simple_term_menu

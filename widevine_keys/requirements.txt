@@ -1,0 +1,7 @@
+xmltodict
+requests
+google
+google-api-python-client
+protobuf
+pycryptodome
+pycryptodomex
